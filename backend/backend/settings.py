@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     'djoser',
-    "rest_framework_simple_jwt",
+    "rest_framework_simplejwt",
     # internal app
     "users",
 ]
@@ -138,8 +138,10 @@ AUTH_USER_MODEL = 'users.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        (...)
     ),
+    #  'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
 }
 
 SIMPLE_JWT = {
@@ -170,3 +172,13 @@ DJOSER = {
         'user_delete':'djoser.serializers.UserDeleteSerializer',
     },
 }
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a1806074a81221'
+EMAIL_HOST_PASSWORD = '8433a2af574426'
+EMAIL_PORT = '2525'
+
+
+# http://127.0.0.1:8000/activate/Nw/cbaqoj-c48f5c7157b4e1433976910b6ae43e9c
